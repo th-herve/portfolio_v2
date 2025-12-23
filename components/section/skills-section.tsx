@@ -18,7 +18,7 @@ import {
 import { TypographyH2, TypographyP } from "../typo/typography";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
-type Skill = { icon: ReactNode; name: string, hide?: boolean };
+type Skill = { icon: ReactNode; name: string; hide?: boolean };
 
 type Skills = { category: string; items: Skill[] }[];
 
@@ -33,7 +33,7 @@ const skills: Skills = [
       {
         icon: <JavascriptSvg />,
         name: "Javascript",
-        hide: true
+        hide: true,
       },
       {
         icon: <JavaSvg />,
@@ -100,9 +100,13 @@ const skills: Skills = [
   },
 ];
 
-const SkillsSection = () => {
+interface Props {
+  className?: string;
+}
+
+const SkillsSection = ({ className }: Props) => {
   return (
-    <div>
+    <div className={className}>
       <TypographyH2>Skills</TypographyH2>
 
       <div className="grid grid-cols-[auto_1fr] items-center gap-x-2">
@@ -113,14 +117,16 @@ const SkillsSection = () => {
             </TypographyP>
 
             <div className="flex gap-4 p-2">
-              {category.items.map((skill, i) => (
-                !skill.hide &&
-                <IconContainer
-                  key={skill.name + i}
-                  icon={skill.icon}
-                  tooltip={skill.name}
-                />
-              ))}
+              {category.items.map(
+                (skill, i) =>
+                  !skill.hide && (
+                    <IconContainer
+                      key={skill.name + i}
+                      icon={skill.icon}
+                      tooltip={skill.name}
+                    />
+                  ),
+              )}
             </div>
           </Fragment>
         ))}

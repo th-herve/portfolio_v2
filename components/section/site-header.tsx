@@ -1,8 +1,13 @@
+import { cn } from "@/lib/utils";
 import { TypographyP } from "../typo/typography";
 
-const SiteHeader = () => {
+interface Props {
+  className?: string;
+}
+
+const SiteHeader = ({ className }: Props) => {
   return (
-    <header className="my-5">
+    <header className={cn("my-5", className)}>
       <TypographyP>~/th-herve</TypographyP>
     </header>
   );

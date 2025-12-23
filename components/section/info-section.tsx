@@ -1,10 +1,15 @@
 import { ReactNode } from "react";
 import { CodeSvg, MailSvg, MapPinSvg } from "../svg/svg";
 import { TypographyP } from "../typo/typography";
+import { cn } from "@/lib/utils";
 
-const InfoSection = () => {
+interface Props {
+  className?: string;
+}
+
+const InfoSection = ({ className }: Props) => {
   return (
-    <section className="space-y-2">
+    <section className={cn("space-y-2", className)}>
       <InfoLine text="Fullstack developer" icon={<CodeSvg />} />
       <InfoLine text="Lorient, France" icon={<MapPinSvg />} />
       <InfoLine text="thibault.herve1@gmail.com" icon={<MailSvg />} />

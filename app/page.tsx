@@ -6,7 +6,7 @@ import SkillsSection from "@/components/section/skills-section";
 
 export default function Home() {
   return (
-    <div className="flex justify-center w-full min-h-screen">
+    <div className="flex justify-center w-full min-h-screen px-4 sm:px-6 md:px-8 lg:px-12">
       <div className="w-full max-w-3xl flex flex-col gap-20">
         <SiteHeader />
 

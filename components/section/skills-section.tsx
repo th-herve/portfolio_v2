@@ -8,6 +8,7 @@ import {
   JavaSvg,
   LaravelSvg,
   LinuxSvg,
+  MySql,
   NextJsSvg,
   PhpSvg,
   PostgresqlSvg,
@@ -15,88 +16,74 @@ import {
   SpringSvg,
   TypescriptSvg,
 } from "../svg/logo";
-import { TypographyH2, TypographyP } from "../typo/typography";
+import { TypographyH2 } from "../typo/typography";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
-type Skill = { icon: ReactNode; name: string; hide?: boolean };
+type Skill = { icon: ReactNode; name: string; isHidden?: boolean };
 
-type Skills = { category: string; items: Skill[] }[];
-
-const skills: Skills = [
+const skills: Skill[] = [
   {
-    category: "Languages",
-    items: [
-      {
-        icon: <TypescriptSvg />,
-        name: "Typescript",
-      },
-      {
-        icon: <JavascriptSvg />,
-        name: "Javascript",
-        hide: true,
-      },
-      {
-        icon: <JavaSvg />,
-        name: "Java",
-      },
-      {
-        icon: <GoSvg />,
-        name: "Go",
-      },
-      {
-        icon: <PhpSvg />,
-        name: "Php",
-      },
-    ],
+    icon: <TypescriptSvg />,
+    name: "Typescript",
   },
-
   {
-    category: "Frameworks",
-    items: [
-      {
-        icon: <ReactSvg />,
-        name: "React",
-      },
-      {
-        icon: <NextJsSvg />,
-        name: "NextJs",
-      },
-      {
-        icon: <SpringSvg />,
-        name: "Spring",
-      },
-      {
-        icon: <LaravelSvg />,
-        name: "Laravel",
-        hide: false,
-      },
-    ],
+    icon: <JavascriptSvg />,
+    name: "Javascript",
+    isHidden: true,
   },
-
   {
-    category: "Others",
-    items: [
-      {
-        icon: <GitSvg />,
-        name: "Git",
-      },
-      {
-        icon: <LinuxSvg />,
-        name: "Linux",
-      },
-      {
-        icon: <DockerSvg />,
-        name: "Docker",
-      },
-      {
-        icon: <GithubActionsSvg />,
-        name: "CI/CD",
-      },
-      {
-        icon: <PostgresqlSvg />,
-        name: "PostgreSQL",
-      },
-    ],
+    icon: <JavaSvg />,
+    name: "Java",
+  },
+  {
+    icon: <GoSvg />,
+    name: "Go",
+  },
+  {
+    icon: <PhpSvg />,
+    name: "Php",
+  },
+  {
+    icon: <ReactSvg />,
+    name: "React",
+  },
+  {
+    icon: <NextJsSvg />,
+    name: "NextJs",
+  },
+  {
+    icon: <SpringSvg />,
+    name: "Spring",
+  },
+  {
+    icon: <LaravelSvg />,
+    name: "Laravel",
+    isHidden: false,
+  },
+  {
+    icon: <GitSvg />,
+    name: "Git",
+  },
+  {
+    icon: <LinuxSvg />,
+    name: "Linux",
+  },
+  {
+    icon: <DockerSvg />,
+    name: "Docker",
+  },
+  {
+    icon: <GithubActionsSvg />,
+    name: "CI/CD",
+  },
+  {
+    icon: <PostgresqlSvg />,
+    name: "PostgreSQL",
+  },
+  {
+    icon: <MySql />,
+    name: "MySql",
+    isHidden: true
   },
 ];
 
@@ -109,27 +96,17 @@ const SkillsSection = ({ className }: Props) => {
     <div className={className}>
       <TypographyH2>Skills</TypographyH2>
 
-      <div className="grid grid-cols-[auto_1fr] items-center gap-x-2">
-        {skills.map((category, i) => (
-          <Fragment key={i}>
-            <TypographyP className="text-muted-foreground">
-              {category.category}
-            </TypographyP>
-
-            <div className="flex gap-4 p-2">
-              {category.items.map(
-                (skill, i) =>
-                  !skill.hide && (
-                    <IconContainer
-                      key={skill.name + i}
-                      icon={skill.icon}
-                      tooltip={skill.name}
-                    />
-                  ),
-              )}
-            </div>
-          </Fragment>
-        ))}
+      <div className="flex flex-wrap gap-4 p-2">
+        {skills.map(
+          (skill, i) =>
+            !skill.isHidden && (
+              <IconContainer
+                key={skill.name + i}
+                icon={skill.icon}
+                tooltip={skill.name}
+              />
+            ),
+        )}
       </div>
     </div>
   );

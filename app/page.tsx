@@ -10,10 +10,12 @@ export default function Home() {
       <div className="w-full max-w-3xl flex flex-col gap-20">
         <SiteHeader />
 
-        <main className="space-y-10">
-          <HeaderSection />
-          <InfoSection />
-          <DescriptionSection />
+        <main className="space-y-16">
+          <div className="space-y-6">
+            <HeaderSection />
+            <InfoSection />
+            <DescriptionSection />
+          </div>
 
           <SkillsSection />
         </main>

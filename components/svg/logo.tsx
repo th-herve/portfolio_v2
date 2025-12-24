@@ -12,39 +12,8 @@ export const TypescriptSvg = () => (
 );
 
 export const NextJsSvg = () => (
-  <svg viewBox="0 0 128 128">
-    <circle cx="64" cy="64" r="64"></circle>
-    <path
-      fill="url(#a)"
-      d="M106.317 112.014 49.167 38.4H38.4v51.179h8.614v-40.24l52.54 67.884a64.216 64.216 0 0 0 6.763-5.209z"
-    ></path>
-    <path fill="url(#b)" d="M81.778 38.4h8.533v51.2h-8.533z"></path>
-    <defs>
-      <linearGradient
-        id="a"
-        x1="109"
-        x2="144.5"
-        y1="116.5"
-        y2="160.5"
-        gradientTransform="scale(.71111)"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#fff"></stop>
-        <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
-      </linearGradient>
-      <linearGradient
-        id="b"
-        x1="121"
-        x2="120.799"
-        y1="54"
-        y2="106.875"
-        gradientTransform="scale(.71111)"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#fff"></stop>
-        <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
-      </linearGradient>
-    </defs>
+  <svg fill="currentColor" viewBox="0 0 128 128">
+    <path d="M64 0A64 64 0 0 0 0 64a64 64 0 0 0 64 64 64 64 0 0 0 35.508-10.838L47.014 49.34v40.238H38.4V38.4h10.768l57.125 73.584A64 64 0 0 0 128 64 64 64 0 0 0 64 0Zm17.777 38.4h8.534v48.776L81.777 75.97Zm24.18 73.92-.111.096a64 64 0 0 0 .111-.096z"></path>
   </svg>
 );
 
@@ -138,10 +107,7 @@ export const ReactSvg = () => (
 );
 
 export const SpringBootSvg = () => (
-  <svg
-    viewBox="-2.1 0 514.3 457.8"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg viewBox="-2.1 0 514.3 457.8" xmlns="http://www.w3.org/2000/svg">
     <path
       d="m503.5 201.4-100.5-173.9c-8.7-15.1-30.1-27.5-47.6-27.5h-200.8c-17.4 0-38.9 12.4-47.6 27.5l-100.4 173.9c-8.7 15.1-8.7 39.8 0 54.9l100.4 174c8.7 15.1 30.1 27.5 47.6 27.5h200.9c17.4 0 38.8-12.4 47.6-27.5l100.4-174c8.7-15.1 8.7-39.8 0-54.9zm-270.2-105.2c0-11.4 9.3-20.7 20.7-20.7s20.7 9.3 20.7 20.7v123.7c0 11.4-9.3 20.7-20.7 20.7s-20.7-9.3-20.7-20.7zm20.7 264.1c-77.4 0-140.4-63-140.4-140.4.1-44.4 21.1-86.1 56.7-112.7 8.2-6.1 19.7-4.4 25.8 3.8s4.4 19.7-3.8 25.8c-45.9 34.1-55.5 99-21.4 144.9s99 55.5 144.9 21.4c26.3-19.5 41.8-50.4 41.8-83.2-.1-32.9-15.7-63.8-42.2-83.4-8.2-6-9.9-17.6-3.9-25.8s17.6-9.9 25.8-3.9c35.9 26.5 57 68.5 57.1 113.1 0 77.5-63 140.4-140.4 140.4z"
       fill="#6db33f"

@@ -1,7 +1,9 @@
+import ContactSection from "@/components/section/contact-section";
 import DescriptionSection from "@/components/section/description-section";
 import HeaderSection from "@/components/section/header-section";
 import InfoSection from "@/components/section/info-section";
 import ProjectSection from "@/components/section/projects-section";
+import Footer from "@/components/section/site-footer";
 import SiteHeader from "@/components/section/site-header";
 import SkillsSection from "@/components/section/skills-section";
 
@@ -20,6 +22,7 @@ export default function Home() {
 
           <SkillsSection />
           <ProjectSection />
+          <Footer />
         </main>
       </div>
     </div>

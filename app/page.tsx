@@ -1,3 +1,4 @@
+import ConnectSection from "@/components/section/connect-section";
 import ContactSection from "@/components/section/contact-section";
 import DescriptionSection from "@/components/section/description-section";
 import HeaderSection from "@/components/section/header-section";
@@ -18,6 +19,7 @@ export default function Home() {
             <HeaderSection />
             <InfoSection />
             <DescriptionSection />
+            <ConnectSection />
           </div>
 
           <SkillsSection />

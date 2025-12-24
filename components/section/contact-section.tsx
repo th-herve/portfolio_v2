@@ -65,7 +65,7 @@ const ContactSection = ({ className }: Props) => {
   const icon = icons[formSubmissionStatus] ?? null;
 
   return (
-    <section className={className}>
+    <section id="contact-section" className={className}>
       <TypographyH2>Contact</TypographyH2>
       <div className="font-mono">
         <Card>

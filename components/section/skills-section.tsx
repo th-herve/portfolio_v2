@@ -13,13 +13,14 @@ import {
   PhpSvg,
   PostgresqlSvg,
   ReactSvg,
-  SpringSvg,
+  SpringBootSvg,
   TypescriptSvg,
 } from "../svg/logo";
 import { TypographyH2 } from "../typo/typography";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { cn } from "@/lib/utils";
 
-type Skill = { icon: ReactNode; name: string; isHidden?: boolean };
+export type Skill = { icon: ReactNode; name: string; isHidden?: boolean };
 
 const skills: Skill[] = [
   {
@@ -52,8 +53,8 @@ const skills: Skill[] = [
     name: "NextJs",
   },
   {
-    icon: <SpringSvg />,
-    name: "Spring",
+    icon: <SpringBootSvg />,
+    name: "Spring boot",
   },
   {
     icon: <LaravelSvg />,
@@ -83,7 +84,7 @@ const skills: Skill[] = [
   {
     icon: <MySql />,
     name: "MySql",
-    isHidden: true
+    isHidden: true,
   },
 ];
 
@@ -95,12 +96,11 @@ const SkillsSection = ({ className }: Props) => {
   return (
     <div className={className}>
       <TypographyH2>Skills</TypographyH2>
-
       <div className="flex flex-wrap gap-4 p-2">
         {skills.map(
           (skill, i) =>
             !skill.isHidden && (
-              <IconContainer
+              <SkillIconContainer
                 key={skill.name + i}
                 icon={skill.icon}
                 tooltip={skill.name}
@@ -113,17 +113,24 @@ const SkillsSection = ({ className }: Props) => {
 };
 export default SkillsSection;
 
-const IconContainer = ({
+export const SkillIconContainer = ({
   icon,
   tooltip,
+  size = "md",
 }: {
   icon: ReactNode;
   tooltip: string;
+  size?: "sm" | "md";
 }) => {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <div className="size-10 transition-transform duration-200 ease-out hover:-translate-y-2 ">
+        <div
+          className={cn(
+            "size-10 transition-transform duration-200 ease-out hover:-translate-y-2 ",
+            { "size-6": size === "sm" },
+          )}
+        >
           {icon}
         </div>
       </TooltipTrigger>

@@ -63,7 +63,7 @@ const ProjectSection = ({ className }: Props) => {
   return (
     <section className={className}>
       <TypographyH2>Projects</TypographyH2>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-4">
         {projects.map((project, i) => (
           <ProjectCard
             key={`project-card-${project.title}-${i}`}

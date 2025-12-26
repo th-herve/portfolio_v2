@@ -14,9 +14,6 @@ RUN npm run build
 # ---------- Production runtime ----------
 FROM node:20-alpine AS runner
 
-ARG USER
-ARG GROUP
-
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -27,8 +24,8 @@ COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
 #  use user 1000 created by node:alpine
-RUN chown -R ${USER}:${GROUP} /app
-USER ${USER}
+RUN chown -R 1000:1000 /app
+USER 1000
 
 EXPOSE 3000
 

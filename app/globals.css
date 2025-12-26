@@ -125,3 +125,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* remove the chrome styling when auto completing an input  */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}

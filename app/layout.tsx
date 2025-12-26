@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import {
-  Press_Start_2P,
-  JetBrains_Mono,
-  Fira_Sans,
-} from "next/font/google";
+import { Press_Start_2P, JetBrains_Mono, Fira_Sans } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
@@ -34,11 +31,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${jetBrains.variable} ${firaSans.variable} ${pressStart2P.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -48,14 +48,14 @@ const ContactSection = ({ className }: Props) => {
   const icons = {
     success: (
       <SubmissionSatusIcon
-        icon={<CircleCheckIcon className="size-4 text-green-300" />}
+        icon={<CircleCheckIcon className="size-4 text-green-400 dark:text-green-300" />}
         text="Message sent!"
       />
     ),
     pending: <Loader2Icon className="size-4 animate-spin" />,
     error: (
       <SubmissionSatusIcon
-        icon={<CircleXIcon className="size-4 text-red-300" />}
+        icon={<CircleXIcon className="size-4 text-red-400 dark:text-red-300" />}
         text="An error occured, please try again"
       />
     ),

@@ -1,10 +1,5 @@
 import Image from "next/image";
-import {
-  GithubSvg,
-  NextJsSvg,
-  ReactSvg,
-  SpringBootSvg,
-} from "../svg/logo";
+import { GithubSvg, GoSvg, NextJsSvg, ReactSvg, SpringBootSvg } from "../svg/logo";
 import { TypographyH2, TypographyP } from "../typo/typography";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Skill, SkillIconContainer } from "./skills-section";
@@ -50,8 +45,22 @@ const projects: Project[] = [
       "A straightforward web application that presents professional cycling races scheduled in a calendar format.",
     imageLink: "/cycling.png",
     liveLink: "https://cycling.th-herve.fr",
-    githubLink: "https://github.com/th-herve/cycling-calendar",
-    skills: [],
+    githubLink: "https://github.com/th-herve/cycling-app",
+    skills: [
+      {
+        name: "NextJs",
+        icon: <NextJsSvg />,
+      },
+      {
+        name: "React",
+        icon: <ReactSvg />,
+      },
+      {
+        name: "Go",
+        icon: <GoSvg />,
+      },
+
+    ],
   },
 ];
 

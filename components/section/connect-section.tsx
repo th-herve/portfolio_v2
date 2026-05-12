@@ -1,3 +1,4 @@
+"use client"
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { GithubSvg } from "../svg/logo";
@@ -22,7 +23,11 @@ const ConnectSection = ({ className }: Props) => {
         <Tooltip>
           <TooltipTrigger asChild>
             <Button asChild variant="outline">
-              <a target="_blank" href="https://github.com/th-herve">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/th-herve"
+              >
                 <GithubSvg />
               </a>
             </Button>
@@ -35,7 +40,11 @@ const ConnectSection = ({ className }: Props) => {
         <Tooltip>
           <TooltipTrigger asChild>
             <Button asChild variant="outline">
-              <a target="_blank" href="mailto:thibault.herve1@gmail.com">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="mailto:thibault.herve1@gmail.com"
+              >
                 <MailIcon />
               </a>
             </Button>

@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { GithubSvg, GoSvg, NextJsSvg, ReactSvg, SpringBootSvg } from "../svg/logo";
 import { TypographyH2, TypographyP } from "../typo/typography";
